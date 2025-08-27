@@ -14,6 +14,7 @@ class TaskListAPIView(ListAPIView):
     serializer_class = TaskSerializer
     queryset = Task.objects.all()
 
+
 class TaskDetailAPIView(RetrieveAPIView):
     serializer_class = TaskSerializer
     queryset = Task.objects.all()
