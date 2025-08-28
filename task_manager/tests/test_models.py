@@ -12,6 +12,7 @@ def test_create_task():
     assert task.name == 'Первая задача'
     assert task.description == 'Это первая задача'
     assert task.status == 'CREATED'
+    assert task.__str__() == 'Первая задача'
 
 
 @pytest.mark.django_db
@@ -21,4 +22,6 @@ def test_create_task_empty_name():
     '''
     with pytest.raises(ValidationError):
         Task.objects.create(name='')
+
+
 
