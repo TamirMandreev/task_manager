@@ -2,8 +2,8 @@ from django.shortcuts import render
 
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
 
-from models import Task
-from serializers import TaskSerializer
+from task_manager.models import Task
+from task_manager.serializers import TaskSerializer
 
 
 class TaskCreateAPIView(CreateAPIView):
