@@ -20,6 +20,10 @@ class Task(models.Model):
     description = models.TextField(verbose_name='Описание задачи', blank=True, null=True, help_text='Укажите описание задачи')
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='CREATED')
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         verbose_name = 'Задача'
         verbose_name_plural = 'Задачи'
+
