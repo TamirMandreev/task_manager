@@ -1,6 +1,8 @@
 import uuid
 
 from django.db import models
+from rest_framework.exceptions import ValidationError
+
 
 # Create your models here.
 
@@ -22,6 +24,14 @@ class Task(models.Model):
 
     def __str__(self):
         return self.name
+
+    def clean(self):
+        if not self.name:
+            raise ValidationError('Название задачи не может быть пустым')
+
+    def save(self, *args, **kwargs):
+        self.clean()
+        super().save(*args, **kwargs)
 
     class Meta:
         verbose_name = 'Задача'
