@@ -16,3 +16,6 @@ pytest-django = "^4.11.1"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = 'config.settings'
