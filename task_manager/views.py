@@ -1,6 +1,10 @@
-from django.shortcuts import render
-
-from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
+from rest_framework.generics import (
+    CreateAPIView,
+    DestroyAPIView,
+    ListAPIView,
+    RetrieveAPIView,
+    UpdateAPIView,
+)
 
 from task_manager.models import Task
 from task_manager.serializers import TaskSerializer
